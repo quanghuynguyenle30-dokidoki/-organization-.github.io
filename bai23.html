@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thành tiền tự động</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0ff; padding: 20px; }
+        input { margin: 5px; padding: 5px; border: 1px solid #ccc; border-radius: 4px; }
+        .result { font-weight: bold; color: darkblue; }
+    </style>
+</head>
+<body>
+    <h1>Nhập số lượng và đơn giá</h1>
+
+    Số lượng: <input type="number" id="sl" value="1"> <br>
+    Đơn giá:  <input type="number" id="dg" placeholder="Nhập giá tại đây"> 
+    <hr>
+    Thành tiền: <input type="text" id="tt" class="result" readonly> **USD**
+
+    <script>
+        const slInput = document.getElementById('sl');
+        const dgInput = document.getElementById('dg');
+        const ttInput = document.getElementById('tt');
+
+        const tinhToan = () => {
+            const thanhTien = slInput.value * dgInput.value;
+            ttInput.value = thanhTien > 0 ? thanhTien.toLocaleString() : "";
+        };
+
+        slInput.oninput = tinhToan;
+        dgInput.oninput = tinhToan;
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Thay đổi thuộc tính của trang Web</title>
+    <style>
+        input { margin-bottom: 10px; padding: 5px; width: 220px; }
+        
+        #thanhTrangThai {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        
+        body { transition: background-color 0.4s ease, color 0.4s ease; }
+    </style>
+</head>
+<body>
+    <h2>Nhập vào các giá trị và nhấn nút Thay đổi</h2>
+
+    <input type="text" id="tieuDe" value="Tiêu đề cực mới" placeholder="Nhập tiêu đề tab"> <br>
+    <input type="text" id="mauNen" value="lightblue" placeholder="Nhập màu nền (VD: blue, #f0f0f0)"> <br>
+    <input type="text" id="mauChu" value="darkblue" placeholder="Nhập màu chữ (VD: white, #000)"> <br>
+    <input type="text" id="trangThai" value="Hệ thống đã cập nhật màu sắc!" placeholder="Dòng trạng thái"> <br>
+    
+    <button id="btnThayDoi" style="padding: 5px 15px; cursor: pointer;">Thay đổi</button>
+
+    <div id="thanhTrangThai">Trạng thái: Sẵn sàng (Hãy thử bấm nút Thay đổi)</div>
+
+    <script>
+        function capNhatGiaoDien() {
+            const valTieuDe = document.getElementById('tieuDe').value;
+            const valMauNen = document.getElementById('mauNen').value;
+            const valMauChu = document.getElementById('mauChu').value;
+            const valTrangThai = document.getElementById('trangThai').value;
+
+            document.title = valTieuDe;                           
+            document.body.style.backgroundColor = valMauNen;      
+            document.body.style.color = valMauChu;               
+            
+            document.getElementById('thanhTrangThai').innerText = "Trạng thái: " + valTrangThai;
+        }
+
+        document.getElementById('btnThayDoi').addEventListener('click', capNhatGiaoDien);
+    </script>
+</body>
+</html>

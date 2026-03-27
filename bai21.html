@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial; padding: 20px;">
+    <h3>Bộ đếm ký tự</h3>
+    
+    Số ký tự đã gõ: 
+    <input type="text" id="SoKyTu" value="0" readonly style="width: 50px;"> 
+    <br><br>
+
+    <textarea id="NoiDung" cols="50" rows="10" placeholder="Bắt đầu gõ tại đây..."></textarea>
+
+    <script>
+        const txtArea = document.getElementById('NoiDung');
+        const txtCount = document.getElementById('SoKyTu');
+
+        txtArea.oninput = () => {
+            const doDai = txtArea.value.length;
+            txtCount.value = doDai;
+
+            if (doDai > 200) {
+                alert("Bạn đã gõ quá số ký tự cho phép!");
+                txtArea.value = txtArea.value.substring(0, 200);
+                txtCount.value = 200;
+            }
+        };
+    </script>
+</body>
+</html>

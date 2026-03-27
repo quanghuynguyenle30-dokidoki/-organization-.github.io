@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Thay đổi giá trị của thuộc tính (Cách hiện đại)</title>
+    <style>
+        input { padding: 5px; width: 100px; text-align: center; }
+        button { padding: 5px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Hãy nhập hai số và click vào nút Tính tổng</h2>
+
+    <input type="number" id="soHang1" placeholder="Số 1"> +
+    <input type="number" id="soHang2" placeholder="Số 2"> =
+    
+    <input type="text" id="ketQua" placeholder="Kết quả" readonly>
+    
+    <button id="btnTinhTong">Tính tổng</button>
+
+    <script>
+        const oSo1 = document.getElementById('soHang1');
+        const oSo2 = document.getElementById('soHang2');
+        const oKetQua = document.getElementById('ketQua');
+        const nutTinh = document.getElementById('btnTinhTong');
+
+        nutTinh.addEventListener('click', function() {
+            const giaTri1 = parseFloat(oSo1.value);
+            const giaTri2 = parseFloat(oSo2.value);
+
+            if (isNaN(giaTri1) || isNaN(giaTri2)) {
+                oKetQua.value = "Lỗi nhập!";
+            } else {
+                oKetQua.value = giaTri1 + giaTri2;
+            }
+        });
+    </script>
+</body>
+</html>

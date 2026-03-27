@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp ảnh nền</title>
+    <style>
+        
+        body {
+            background-image: url('anh1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .txt-input {
+            background-image: url('anh2.jpg');
+            background-repeat: repeat-x;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .txt-area {
+            background-image: url('anh3.jpg');
+            background-repeat: repeat-y;
+            background-position: left top;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #999;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Trình diễn thuộc tính background-repeat</h3>
+
+    <input type="text" class="txt-input" placeholder="Ô nhập liệu với repeat-x">
+
+    <p>
+        <textarea class="txt-area" cols="80" rows="15" placeholder="Vùng văn bản với repeat-y"></textarea>
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sắp xếp mảng (Cách hiện đại)</title>
+</head>
+<body>
+    <script>
+        const soLuong = parseInt(prompt("Bạn cần nhập bao nhiêu người: ", 5));
+        
+
+        const danhSach = []; 
+
+        if (!isNaN(soLuong) && soLuong > 0) {
+            
+            for (let i = 0; i < soLuong; i++) {
+                let ten = prompt(`Nhập họ tên người thứ ${i + 1}:`, "");
+                
+                if (ten) {
+                    danhSach.push(ten);
+                }
+            }
+
+            danhSach.sort();
+
+            document.write("<h2>Danh sách đã sắp xếp là: </h2>");
+            
+            for (const x of danhSach) { 
+                document.write(x + "<br>"); 
+            }
+        } else {
+            alert("Số lượng không hợp lệ!");
+        }
+    </script>
+</body>
+</html>
